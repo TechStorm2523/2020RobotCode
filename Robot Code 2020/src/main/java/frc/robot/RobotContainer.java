@@ -8,12 +8,13 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 
 import frc.robot.commands.ControlDrive;
 
 import frc.robot.commands.CommandLift;
-
+import frc.robot.commands.CommandLiftUp;
 import frc.robot.commands.ExampleCommand;
 
 import frc.robot.subsystems.DriveTrain;
@@ -27,6 +28,7 @@ import frc.robot.subsystems.LiftSub;
 import frc.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -54,7 +56,7 @@ private final LiftSub m_liftSub = new LiftSub();
   private final intakeFeed m_intakeFeed = new intakeFeed(m_intake);
 
 
-private final CommandLift m_commandLift = new CommandLift(m_liftSub);
+private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -63,7 +65,7 @@ private final CommandLift m_commandLift = new CommandLift(m_liftSub);
     // Configure the button bindings
     configureButtonBindings();
   }
-
+  Joystick userStick = new Joystick(1);
   /**
    * Use this method to define your button->command mappings.  Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
@@ -71,6 +73,8 @@ private final CommandLift m_commandLift = new CommandLift(m_liftSub);
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    JoystickButton trigger = new JoystickButton(userStick, 1);
+    
   }
 
 
