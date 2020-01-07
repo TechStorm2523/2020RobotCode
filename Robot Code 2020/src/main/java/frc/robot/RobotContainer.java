@@ -9,7 +9,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+
 import frc.robot.commands.ControlDrive;
+
+import frc.robot.commands.CommandLift;
+
 import frc.robot.commands.ExampleCommand;
 
 import frc.robot.subsystems.DriveTrain;
@@ -17,7 +21,11 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.commands.intakeFeed;
 
 import frc.robot.subsystems.ExampleSubsystem;
+
+import frc.robot.subsystems.LiftSub;
+
 import frc.robot.subsystems.Intake;
+
 import edu.wpi.first.wpilibj2.command.Command;
 
 /**
@@ -39,8 +47,14 @@ public class RobotContainer {
   private final Intake m_intake = new Intake();
 
 
+
+private final LiftSub m_liftSub = new LiftSub();
+
+
   private final intakeFeed m_intakeFeed = new intakeFeed(m_intake);
 
+
+private final CommandLift m_commandLift = new CommandLift(m_liftSub);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
