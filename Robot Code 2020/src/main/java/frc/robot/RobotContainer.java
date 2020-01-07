@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ControlDrive;
 
 import frc.robot.commands.CommandLift;
+import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
 import frc.robot.commands.ExampleCommand;
 
@@ -65,7 +66,7 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
     // Configure the button bindings
     configureButtonBindings();
   }
-  Joystick userStick = new Joystick(1);
+  
   /**
    * Use this method to define your button->command mappings.  Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
@@ -73,7 +74,14 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    JoystickButton trigger = new JoystickButton(userStick, 1);
+    Joystick userStick = new Joystick(1);
+    
+    JoystickButton ANGRIERBUTTON = new JoystickButton(userStick, 3);
+
+    JoystickButton ANGERYBUTTON = new JoystickButton(userStick, 4);
+    
+    ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_liftSub));
+    ANGERYBUTTON.whileHeld(new CommandLiftUp(m_liftSub));
     
   }
 
