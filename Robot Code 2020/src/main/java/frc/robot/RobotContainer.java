@@ -84,8 +84,10 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
 
     JoystickButton ANGERYBUTTON = new JoystickButton(userStick, 4);
     
+
     ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_liftSub));
     ANGERYBUTTON.whileHeld(new CommandLiftUp(m_liftSub));
+
     
 
   }
