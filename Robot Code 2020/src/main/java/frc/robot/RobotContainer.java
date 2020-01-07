@@ -75,6 +75,10 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
    */
   private void configureButtonBindings() {
     Joystick userStick = new Joystick(1);
+    JoystickButton trigger = new JoystickButton(userStick, 1);
+    JoystickButton thumb = new JoystickButton(userStick, 2);
+  
+  thumb.whileHeld(new intakeFeed(m_intake));
     
     JoystickButton ANGRIERBUTTON = new JoystickButton(userStick, 3);
 
@@ -83,7 +87,9 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
     ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_liftSub));
     ANGERYBUTTON.whileHeld(new CommandLiftUp(m_liftSub));
     
+
   }
+
 
 
   /**
