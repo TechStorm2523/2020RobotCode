@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ControlDrive;
 
 import frc.robot.commands.CommandLift;
+import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
 import frc.robot.commands.ExampleCommand;
 
@@ -78,6 +79,15 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
     JoystickButton thumb = new JoystickButton(userStick, 2);
   
   thumb.whileHeld(new intakeFeed(m_intake));
+    
+    JoystickButton ANGRIERBUTTON = new JoystickButton(userStick, 3);
+
+    JoystickButton ANGERYBUTTON = new JoystickButton(userStick, 4);
+    
+    ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_liftSub));
+    ANGERYBUTTON.whileHeld(new CommandLiftUp(m_liftSub));
+    
+
   }
 
 
