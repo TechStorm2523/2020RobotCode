@@ -35,7 +35,10 @@ public void moveIntakeAndFeeder() {
   feederWheel.set(1);
   intakeBelt.set(1);
 }
-
+public void stopIntakeAndFeeder() {
+  feederWheel.set(0);
+  intakeBelt.set(0);
+}
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
