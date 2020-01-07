@@ -65,7 +65,7 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
     // Configure the button bindings
     configureButtonBindings();
   }
-  Joystick userStick = new Joystick(1);
+  
   /**
    * Use this method to define your button->command mappings.  Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
@@ -73,9 +73,13 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    Joystick userStick = new Joystick(1);
     JoystickButton trigger = new JoystickButton(userStick, 1);
-    
+    JoystickButton thumb = new JoystickButton(userStick, 2);
+  
+  thumb.whileHeld(new intakeFeed(m_intake));
   }
+
 
 
   /**
