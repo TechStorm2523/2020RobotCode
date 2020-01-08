@@ -9,53 +9,37 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.controller.PIDController;
+import edu.wpi.first.wpilibj2.command.PIDSubsystem;
 
-public class LiftSub extends SubsystemBase {
+public class PIDTEST extends PIDSubsystem {
   /**
-   * Creates a new LiftSub.
+   * Creates a new PIDTEST.
    */
 
   WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
 
-  WPI_TalonSRX RightMotor = new WPI_TalonSRX(-0);
-
-  public LiftSub() {
-
+  public PIDTEST() {
+    super(
+        // The PIDController used by the subsystem
+        new PIDController(0, 0, 0));
   }
 
-public void LiftSub(){
-
-}
-
-public void LiftUp(){
-
-  RightMotor.set(-1);
-
-  LeftMotor.set(1);
-
-}
-
-public void LiftDown(){
-
-RightMotor.set(1);
-
-LeftMotor.set(-1);
-
-}
-
-public void LiftStop(){
-
-  RightMotor.set(0);
-
-  LeftMotor.set(0);
+  @Override
+  public void useOutput(double output, double setpoint) {
+    // Use the output here
   
-}
-
-
+  LeftMotor.set(output);
+  
+  }
 
   @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+  public double getMeasurement() {
+    // Return the process variable measurement here
+
+    int position = LeftMotor.getSelectedSensorPosition();
+
+    return 0;
+
   }
 }
