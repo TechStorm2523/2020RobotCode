@@ -34,7 +34,7 @@ SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight)
   }
   public void Drive(double Left, double Right){
     LeftSide.set(Left);
-    RightSide.set(Right);
+    RightSide.set(Right); 
 
 
   }
