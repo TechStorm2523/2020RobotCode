@@ -74,15 +74,15 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    Joystick userStick = new Joystick(1);
-    JoystickButton trigger = new JoystickButton(userStick, 1);
-    JoystickButton thumb = new JoystickButton(userStick, 2);
-  
-  thumb.whileHeld(new intakeFeed(m_intake));
-    
-    JoystickButton ANGRIERBUTTON = new JoystickButton(userStick, 3);
+    final Joystick userStick = new Joystick(1);
+    final JoystickButton trigger = new JoystickButton(userStick, 1);
+    final JoystickButton thumb = new JoystickButton(userStick, 2);
 
-    JoystickButton ANGERYBUTTON = new JoystickButton(userStick, 4);
+    thumb.whileHeld(new intakeFeed(m_intake));
+
+    final JoystickButton ANGRIERBUTTON = new JoystickButton(userStick, 3);
+
+    final JoystickButton ANGERYBUTTON = new JoystickButton(userStick, 4);
     
 
     ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_liftSub));
