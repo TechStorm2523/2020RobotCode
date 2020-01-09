@@ -15,8 +15,8 @@ public class Manipulator extends SubsystemBase {
   /**
    * Creates a new Manipulator.
    */
-  WPI_TalonSRX Manipulator = new WPI_TalonSRX(4)
-  public Manipulator() {
+  WPI_TalonSRX Manipulator = new WPI_TalonSRX(4);
+   public Manipulator() {
 
   }
   //Constructor boi
@@ -30,7 +30,7 @@ public class Manipulator extends SubsystemBase {
     
 
   }
-  public void Spin(double Speed){
+  public void Spin(final double  Speed){
     Manipulator.set(Speed);
     
 

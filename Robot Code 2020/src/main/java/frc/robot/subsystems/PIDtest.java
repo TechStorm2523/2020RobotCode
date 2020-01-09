@@ -26,13 +26,13 @@ public class PIDtest extends PIDSubsystem {
   @Override
   public void useOutput(double output, double setpoint) {
     // Use the output here
-    FrontLeft.set(output)
+    FrontLeft.set(output);
   }
 
   @Override
   public double getMeasurement() {
     // Return the process variable measurement here
-    int position = FrontLeft.getSelectedSensorPosition()
+    int position = FrontLeft.getSelectedSensorPosition();
     return position;
   }
 }
