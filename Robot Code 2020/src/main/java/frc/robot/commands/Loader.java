@@ -14,9 +14,9 @@ public class Loader extends CommandBase {
   /**
    * Creates a new intakeFeed.
    */
-  Loader m_loader;
-  public Loader(Loader intake) {
-    m_loader = intake;
+  LoaderSub m_loader;
+  public Loader(LoaderSub loader) {
+    m_loader = loader;
     addRequirements(m_loader);
     // Use addRequirements() here to declare subsystem dependencies.
   }
