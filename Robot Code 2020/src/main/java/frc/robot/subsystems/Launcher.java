@@ -37,6 +37,10 @@ public class Launcher extends SubsystemBase {
 
   }
 
+  public void stopFlyWheel(int rpm){
+   flywheel.set(0);
+
+}
 
 
   @Override
