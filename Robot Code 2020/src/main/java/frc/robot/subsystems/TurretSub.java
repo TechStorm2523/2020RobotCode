@@ -9,28 +9,11 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
-
-public class TurretMovement extends SubsystemBase {
+public class TurretSub extends SubsystemBase {
   /**
-   * Creates a new TurretMovement.
+   * Creates a new TurretSub.
    */
-  WPI_TalonFX TurretMovement = new WPI_TalonFX(0);
- 
-  public TurretMovement() {
-
-  }
-  public void TurretSpinClockwise(){
-    TurretMovement.set(1);
-    
-  }
-  public void TurretSpinCounterClockwise(){
-    TurretMovement.set(-1);
-    
-  }
-  public void TurretSpin(double Speed){
-    TurretMovement.set(Speed);
-    
+  public TurretSub() {
 
   }
 
