@@ -15,29 +15,18 @@ public class Intake extends SubsystemBase {
   /**
    * Creates a new Intake.
    */
-WPI_TalonSRX feederWheel = new WPI_TalonSRX(0) ;
 WPI_TalonSRX intakeBelt = new WPI_TalonSRX(0) ;
    public Intake() {
 
   }
 
+  public void moveIntakeBelt(){
+  intakeBelt.set(1);
 
-  public void spinFeederWheel() {
-  feederWheel.set(1);
   }
+public void stopIntakeBelt(){
+intakeBelt.set(0);
 
-
-
-  public void moveIntakeBelt() {
-  intakeBelt.set(1);
-}
-public void moveIntakeAndFeeder() {
-  feederWheel.set(1);
-  intakeBelt.set(1);
-}
-public void stopIntakeAndFeeder() {
-  feederWheel.set(0);
-  intakeBelt.set(0);
 }
   @Override
   public void periodic() {

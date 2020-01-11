@@ -16,6 +16,7 @@ import frc.robot.commands.ControlDrive;
 import frc.robot.commands.CommandLift;
 import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
+import frc.robot.commands.CommandLoaderBelt;
 import frc.robot.commands.ExampleCommand;
 
 import frc.robot.subsystems.DriveTrain;
@@ -25,7 +26,7 @@ import frc.robot.commands.intakeFeed;
 import frc.robot.subsystems.ExampleSubsystem;
 
 import frc.robot.subsystems.LiftSub;
-
+import frc.robot.subsystems.LoaderSub;
 import frc.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj2.command.Command;
@@ -49,7 +50,7 @@ public class RobotContainer {
   
   private final Intake m_intake = new Intake();
 
-
+private final LoaderSub m_loaderSub = new LoaderSub();
 
 private final LiftSub m_liftSub = new LiftSub();
 
@@ -76,9 +77,10 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
   private void configureButtonBindings() {
     final Joystick userStick = new Joystick(1);
     final JoystickButton trigger = new JoystickButton(userStick, 1);
-    final JoystickButton thumb = new JoystickButton(userStick, 2);
+    
+    //final JoystickButton thumb = new JoystickButton(userStick, 2);
 
-    thumb.whileHeld(new intakeFeed(m_intake));
+    //thumb.whileHeld(new intakeFeed(m_intake));
 
     final JoystickButton ANGRIERBUTTON = new JoystickButton(userStick, 3);
 
@@ -88,7 +90,10 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
     ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_liftSub));
     ANGERYBUTTON.whileHeld(new CommandLiftUp(m_liftSub));
 
+    final JoystickButton thumb = new JoystickButton(userStick, 2);
+
     
+    thumb.whileHeld(new CommandLoaderBelt(m_loaderSub));
 
   }
 
