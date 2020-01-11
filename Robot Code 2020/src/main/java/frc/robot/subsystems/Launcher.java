@@ -12,7 +12,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Launcher extends SubsystemBase {
-  /**
+  /*
    * Creates a new Launcher.
    */
   WPI_TalonSRX LauncherWheel = new WPI_TalonSRX(0);
@@ -22,9 +22,6 @@ public class Launcher extends SubsystemBase {
   }
 
   public void SpinLauncherWheel(){
-
-
-
 
   }
 
@@ -38,12 +35,6 @@ public class Launcher extends SubsystemBase {
   public void antispinLauncherWheel(){
     LauncherWheel.set(-1);
       }
-
-  public void stopFlyWheel(int rpm){
-   flywheel.set(0);
-
-}
-
 
   @Override
   public void periodic(){
