@@ -18,10 +18,6 @@ public class LoaderSub extends SubsystemBase {
 
   WPI_TalonSRX BeltMotor = new WPI_TalonSRX(0);
 
-  WPI_TalonSRX WheelMotor = new WPI_TalonSRX(0);
-
-
-
   public LoaderSub() {
 
   }
@@ -41,27 +37,7 @@ public void LoaderBeltStop(){
 BeltMotor.set(0);
 }
 
-public void WheelSpin(){
 
-  WheelMotor.set(1);
-}
-
-public void WheelStop(){
-
-WheelMotor.set(0);
-}
-
-
-
-public void WheelAndBeltMoterGo(){
-WheelMotor.set(1);
-BeltMotor.set(1);
-}
-
-public void WheelAndBeltMoterStop(){
-WheelMotor.set(0);
-BeltMotor.set(0);
-}
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
