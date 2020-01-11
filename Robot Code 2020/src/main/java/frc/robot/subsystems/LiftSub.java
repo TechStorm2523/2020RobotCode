@@ -17,8 +17,7 @@ public class LiftSub extends SubsystemBase {
    */
 
   WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
-
-  WPI_TalonSRX RightMotor = new WPI_TalonSRX(-0);
+  WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
 
   public LiftSub() {
 

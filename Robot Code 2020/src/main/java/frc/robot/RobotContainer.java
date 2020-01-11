@@ -21,8 +21,6 @@ import frc.robot.commands.ExampleCommand;
 
 import frc.robot.subsystems.DriveTrain;
 
-import frc.robot.commands.intakeFeed;
-
 import frc.robot.subsystems.ExampleSubsystem;
 
 import frc.robot.subsystems.LiftSub;
@@ -53,9 +51,6 @@ public class RobotContainer {
 private final LoaderSub m_loaderSub = new LoaderSub();
 
 private final LiftSub m_liftSub = new LiftSub();
-
-
-  private final intakeFeed m_intakeFeed = new intakeFeed(m_intake);
 
 
 private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);

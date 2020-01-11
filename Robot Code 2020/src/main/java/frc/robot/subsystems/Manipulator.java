@@ -15,7 +15,7 @@ public class Manipulator extends SubsystemBase {
   /**
    * Creates a new Manipulator.
    */
-  WPI_TalonSRX Manipulator = new WPI_TalonSRX(4)
+  WPI_TalonSRX Manipulator = new WPI_TalonSRX(4);
   public Manipulator() {
 
   }

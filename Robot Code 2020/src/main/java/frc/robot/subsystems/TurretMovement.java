@@ -14,7 +14,7 @@ public class TurretMovement extends SubsystemBase {
   /**
    * Creates a new TurretMovement.
    */
-  WPI_TalonSRX TurretMovement = new WPI_TalonSRX(69)
+  WPI_TalonSRX TurretMovement = new WPI_TalonSRX(69);
   public TurretMovement() {
 
   }
