@@ -15,27 +15,29 @@ public class Launcher extends SubsystemBase {
   /**
    * Creates a new Launcher.
    */
-
-  WPI_TalonSRX flywheel = new WPI_TalonSRX(0);
-
+  WPI_TalonSRX LauncherWheel = new WPI_TalonSRX(0);
 
   public Launcher() {
 
   }
 
-  public void methodName(){
+  public void SpinLauncherWheel(){
 
 
 
 
   }
 
-  public void spinFlyWheel(int rpm){
-    flywheel.set(1);
-
-
+  public void spinLauncherWheel(){
+    LauncherWheel.set(1);
 
   }
+  public void dontspinLauncherWheel(){
+    LauncherWheel.set(0);
+    }
+  public void antispinLauncherWheel(){
+    LauncherWheel.set(-1);
+      }
 
   public void stopFlyWheel(int rpm){
    flywheel.set(0);
@@ -44,7 +46,9 @@ public class Launcher extends SubsystemBase {
 
 
   @Override
-  public void periodic() {
+  public void periodic(){
     // This method will be called once per scheduler run
   }
 }
+  
+
