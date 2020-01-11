@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 
 import frc.robot.commands.ControlDrive;
-
+import frc.robot.commands.CommandIntake;
 import frc.robot.commands.CommandLift;
 import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
@@ -21,7 +21,7 @@ import frc.robot.commands.ExampleCommand;
 
 import frc.robot.subsystems.DriveTrain;
 
-import frc.robot.commands.intakeFeed;
+import frc.robot.commands.CommandIntake;
 
 import frc.robot.subsystems.ExampleSubsystem;
 
@@ -55,7 +55,7 @@ private final LoaderSub m_loaderSub = new LoaderSub();
 private final LiftSub m_liftSub = new LiftSub();
 
 
-  private final intakeFeed m_intakeFeed = new intakeFeed(m_intake);
+  private final CommandIntake m_intakeFeed = new CommandIntake(m_intake);
 
 
 private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
