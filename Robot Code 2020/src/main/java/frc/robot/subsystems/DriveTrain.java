@@ -12,6 +12,10 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.PIDSubsystem;
+import frc.robot.commands.ControlDrive;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 public class DriveTrain extends PIDSubsystem {
   /**
@@ -24,6 +28,8 @@ WPI_TalonFX BackLeft = new WPI_TalonFX(2);
 WPI_TalonFX BackRight = new WPI_TalonFX(3);
 SpeedControllerGroup LeftSide = new SpeedControllerGroup(FrontLeft, BackLeft);
 SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight);
+
+
   public DriveTrain() {
     super(
         // The PIDController used by the subsystem
@@ -35,9 +41,10 @@ SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight)
   public void Drive(double Left, double Right){
     LeftSide.set(Left);
     RightSide.set(Right); 
-
+    
 
   }
+
 
 
   @Override
