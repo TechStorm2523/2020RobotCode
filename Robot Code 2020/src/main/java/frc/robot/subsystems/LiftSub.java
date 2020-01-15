@@ -23,7 +23,7 @@ public class LiftSub extends SubsystemBase {
 
   }
 
-public void LiftSub(){
+public void Liftsub(){
 
 }
 
