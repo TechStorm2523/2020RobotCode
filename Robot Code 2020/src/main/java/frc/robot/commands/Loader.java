@@ -7,43 +7,38 @@
 
 package frc.robot.commands;
 
-
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj2.command.Subsystem;
-import frc.robot.Robot;
-import frc.robot.RobotContainer;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.LoaderSub;
 
-public class ControlDrive extends CommandBase {
+public class Loader extends CommandBase {
   /**
-   * Creates a new ControlDrive.
+   * Creates a new intakeFeed.
    */
-  DriveTrain m_driveTrain;
-
-  public ControlDrive(DriveTrain driveTrain) {
-    m_driveTrain = driveTrain;
+  LoaderSub m_loader;
+  public Loader(LoaderSub loader) {
+    m_loader = loader;
+    addRequirements(m_loader);
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(m_driveTrain);
   }
+
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    m_loader.LoaderBeltActivator();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    XboxController xb = new XboxController(1);
-    m_driveTrain.Drive(xb.getY(), xb.getX());
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    m_loader.LoaderBeltStop();
   }
+  
 
   // Returns true when the command should end.
   @Override
