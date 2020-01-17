@@ -19,13 +19,7 @@ public class Lift extends SubsystemBase {
   WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
   WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
 
-  public Lift() {
-
-  }
-
-public void lift(){
-
-}
+  
 
 public void LiftUp(){
 

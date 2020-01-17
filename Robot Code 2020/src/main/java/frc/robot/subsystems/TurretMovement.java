@@ -8,13 +8,15 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 public class TurretMovement extends SubsystemBase {
   /**
    * Creates a new TurretMovement.
    */
-  WPI_TalonSRX TurretMovement = new WPI_TalonSRX(69);
+  WPI_TalonFX TurretMovement = new WPI_TalonFX(0);
+ 
   public TurretMovement() {
 
   }
@@ -29,6 +31,9 @@ public class TurretMovement extends SubsystemBase {
     // MMM
 
   } 
+  public void TurretStop(){
+    TurretMovement.set(0);
+  }
 
   @Override
   public void periodic() {
