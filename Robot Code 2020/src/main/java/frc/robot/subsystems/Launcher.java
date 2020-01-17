@@ -11,13 +11,13 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class Shooter extends SubsystemBase {
+public class Launcher extends SubsystemBase {
   /*
    * Creates a new Launcher.
    */
   WPI_TalonSRX LauncherWheel = new WPI_TalonSRX(0);
 
-  public Shooter() {
+  public Launcher() {
 
   }
 
