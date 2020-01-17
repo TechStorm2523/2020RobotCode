@@ -27,12 +27,38 @@ public void Hoodposition(){
 
 }
 
+<<<<<<< Updated upstream
 public void HoodTurnLeft(){
+=======
+<<<<<<< HEAD
+public void LiftUp(){
+
+  RightMotor.set(-1);
+=======
+public void HoodTurnLeft(){
+>>>>>>> master
+>>>>>>> Stashed changes
 
   LeftMotor.set(1);
 
 }
 
+<<<<<<< Updated upstream
+public void HoodTurnRight(){
+=======
+<<<<<<< HEAD
+public void LiftDown(){
+>>>>>>> Stashed changes
+
+RightMotor.set(1);
+
+}
+
+<<<<<<< Updated upstream
+public void HoodStop(){
+=======
+public void LiftStop(){
+=======
 public void HoodTurnRight(){
 
 RightMotor.set(1);
@@ -40,6 +66,8 @@ RightMotor.set(1);
 }
 
 public void HoodStop(){
+>>>>>>> master
+>>>>>>> Stashed changes
 
   RightMotor.set(0);
 
@@ -54,4 +82,11 @@ public void HoodStop(){
     // This method will be called once per scheduler run
   }
 }
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
+>>>>>>> Stashed changes
