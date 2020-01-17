@@ -11,7 +11,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class LiftSub extends SubsystemBase {
+public class HoodPosition extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
@@ -19,31 +19,27 @@ public class LiftSub extends SubsystemBase {
   WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
   WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
 
-  public LiftSub() {
+  public HoodPosition() {
 
   }
 
-public void Liftsub(){
+public void Hoodposition(){
 
 }
 
-public void LiftUp(){
-
-  RightMotor.set(-1);
+public void HoodTurnLeft(){
 
   LeftMotor.set(1);
 
 }
 
-public void LiftDown(){
+public void HoodTurnRight(){
 
 RightMotor.set(1);
 
-LeftMotor.set(-1);
-
 }
 
-public void LiftStop(){
+public void HoodStop(){
 
   RightMotor.set(0);
 
@@ -58,3 +54,4 @@ public void LiftStop(){
     // This method will be called once per scheduler run
   }
 }
+

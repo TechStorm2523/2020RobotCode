@@ -11,43 +11,36 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class LiftSub extends SubsystemBase {
+public class Shooter extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
 
-  WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
-  WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
+  WPI_TalonSRX ShooterMotor = new WPI_TalonSRX(0);
 
-  public LiftSub() {
+  public Shooter() {
 
   }
 
-public void Liftsub(){
+public void shooter(){
 
 }
 
-public void LiftUp(){
+public void ShootOut(){
 
-  RightMotor.set(-1);
-
-  LeftMotor.set(1);
+  ShooterMotor.set(1);
 
 }
 
-public void LiftDown(){
+public void AntiShoot(){
 
-RightMotor.set(1);
-
-LeftMotor.set(-1);
+ShooterMotor.set(-1);
 
 }
 
-public void LiftStop(){
+public void DontShoot(){
 
-  RightMotor.set(0);
-
-  LeftMotor.set(0);
+  ShooterMotor.set(0);
   
 }
 
