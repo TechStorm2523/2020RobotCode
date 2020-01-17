@@ -15,20 +15,26 @@ public class CommandLiftDown extends CommandBase {
    * Creates a new CommandLift.
    */
 
+<<<<<<< HEAD
    Lift m_liftSub;
 
   public CommandLiftDown(Lift liftSub) {
+=======
+   Lift m_lift;
 
-m_liftSub = liftSub;
+  public CommandLiftDown(Lift lift) {
+>>>>>>> 86508624fd7829abc69ac8ecaf13319a56bb8b0e
 
-    addRequirements(m_liftSub);
+m_lift = lift;
+
+    addRequirements(m_lift);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_liftSub.LiftDown();
+    m_lift.LiftDown();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -40,7 +46,7 @@ m_liftSub = liftSub;
   @Override
   public void end(boolean interrupted) {
  
-    m_liftSub.LiftStop();
+    m_lift.LiftStop();
  
   }
 
