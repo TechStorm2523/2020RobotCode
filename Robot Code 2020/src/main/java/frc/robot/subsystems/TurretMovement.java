@@ -11,18 +11,13 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
-public class Turret extends SubsystemBase {
+public class TurretMovement extends SubsystemBase {
   /**
    * Creates a new TurretMovement.
    */
-<<<<<<< HEAD
-  WPI_TalonSRX TurretMovement = new WPI_TalonSRX(69);
-  public Turret() {
-=======
   WPI_TalonFX TurretMovement = new WPI_TalonFX(0);
  
   public TurretMovement() {
->>>>>>> Colin-2-1/11/2020
 
   }
   public void TurretSpinClockwise(){
@@ -39,6 +34,13 @@ public class Turret extends SubsystemBase {
 
   }
 */
+/*
+  public void TurretSpin(double Speed){
+    TurretMovement.set(Speed);
+
+  }
+  */
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
