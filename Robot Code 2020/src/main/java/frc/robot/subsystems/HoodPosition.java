@@ -16,8 +16,7 @@ public class HoodPosition extends SubsystemBase {
    * Creates a new LiftSub.
    */
 
-  WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
-  WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
+  WPI_TalonSRX Motor = new WPI_TalonSRX(0);
 
   public HoodPosition() {
 
@@ -27,27 +26,22 @@ public void Hoodposition(){
 
 }
 
-public void LiftUp(){
+public void HoodPositionUp(){
 
-  RightMotor.set(-1);
-
-  LeftMotor.set(1);
+  Motor.set(1);
 
 }
 
-public void LiftDown(){
+public void HoodPositionDown(){
 
-RightMotor.set(1);
-
-LeftMotor.set(-1);
-
+  Motor.set(1);
 }
+  public void HoodPositionStop(){
 
-public void LiftStop(){
+    Motor.set(0);
+  
 
-  RightMotor.set(0);
 
-  LeftMotor.set(0);
   
 }
 
