@@ -5,29 +5,21 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-// THIS IS FOR THE LAUNCHER FLYWHEEL
-/*
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Launcher;
 
-public class spinFlyWheel extends CommandBase {
+public class LoaderStart extends CommandBase {
   /**
-   * Creates a new spinFlyWheel.
+   * Creates a new LoaderStart.
    */
-  /*
-  Launcher m_Launcher;
-  public spinFlyWheel(Launcher launcher) {
-    m_Launcher = launcher;
-    addRequirements(m_Launcher);
+  public LoaderStart() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_Launcher.spinLauncherWheel();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -38,7 +30,6 @@ public class spinFlyWheel extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_Launcher.dontspinLauncherWheel();
   }
 
   // Returns true when the command should end.
@@ -47,4 +38,3 @@ public class spinFlyWheel extends CommandBase {
     return false;
   }
 }
-*/
