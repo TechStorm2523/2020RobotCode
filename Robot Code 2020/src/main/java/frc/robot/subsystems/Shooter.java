@@ -11,50 +11,35 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class LiftSub extends SubsystemBase {
-  /**
-   * Creates a new LiftSub.
+public class Shooter extends SubsystemBase {
+  /*
+   * Creates a new Launcher.
    */
+  WPI_TalonSRX LauncherWheel = new WPI_TalonSRX(0);
 
-  WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
-  WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
-
-  public LiftSub() {
+  public Shooter() {
 
   }
 
-public void LiftSub(){
+  public void SpinLauncherWheel(){
 
-}
+  }
 
-public void LiftUp(){
+  public void spinLauncherWheel(){
+    LauncherWheel.set(1);
 
-  RightMotor.set(-1);
-
-  LeftMotor.set(1);
-
-}
-
-public void LiftDown(){
-
-RightMotor.set(1);
-
-LeftMotor.set(-1);
-
-}
-
-public void LiftStop(){
-
-  RightMotor.set(0);
-
-  LeftMotor.set(0);
-  
-}
-
-
+  }
+  public void dontspinLauncherWheel(){
+    LauncherWheel.set(0);
+    }
+  public void antispinLauncherWheel(){
+    LauncherWheel.set(-1);
+      }
 
   @Override
-  public void periodic() {
+  public void periodic(){
     // This method will be called once per scheduler run
   }
 }
+  
+

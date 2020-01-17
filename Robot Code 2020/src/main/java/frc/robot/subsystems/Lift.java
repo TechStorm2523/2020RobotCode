@@ -11,31 +11,46 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class LoaderSub extends SubsystemBase {
+public class Lift extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
 
-  WPI_TalonSRX BeltMotor = new WPI_TalonSRX(0);
+  WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
+  WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
 
-  public LoaderSub() {
+  public Lift() {
 
   }
 
-public void Loadersub(){
+public void lift(){
 
 }
 
-public void LoaderBeltActivator(){
+public void LiftUp(){
 
-  BeltMotor.set(1);
+  RightMotor.set(-1);
+
+  LeftMotor.set(1);
 
 }
 
-public void LoaderBeltStop(){
+public void LiftDown(){
 
-BeltMotor.set(0);
+RightMotor.set(1);
+
+LeftMotor.set(-1);
+
 }
+
+public void LiftStop(){
+
+  RightMotor.set(0);
+
+  LeftMotor.set(0);
+  
+}
+
 
 
   @Override
