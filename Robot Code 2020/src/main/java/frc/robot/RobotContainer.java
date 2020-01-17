@@ -50,15 +50,9 @@ public class RobotContainer {
   
   private final Intake m_intake = new Intake();
 
-<<<<<<< HEAD
 private final Loader m_loaderSub = new Loader();
 
-private final Lift m_liftSub = new Lift();
-=======
-private final Loader m_loader = new Loader();
-
 private final Lift m_lift = new Lift();
->>>>>>> 86508624fd7829abc69ac8ecaf13319a56bb8b0e
 
 
   private final CommandIntake m_intakeFeed = new CommandIntake(m_intake);
@@ -99,11 +93,7 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_lift);
     final JoystickButton thumb = new JoystickButton(userStick, 2);
 
     
-<<<<<<< HEAD
     thumb.whileHeld(new LoaderC(m_loaderSub));
-=======
-    thumb.whileHeld(new CommandLoaderBelt(m_loader));
->>>>>>> 86508624fd7829abc69ac8ecaf13319a56bb8b0e
 
   }
 

@@ -15,78 +15,26 @@ public class HoodPosition extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
-
-  WPI_TalonSRX Motor = new WPI_TalonSRX(0);
-
-  public HoodPosition() {
+  public HoodPosition(){
 
   }
 
-public void Hoodposition(){
+  WPI_TalonSRX Motor = new WPI_TalonSRX(0);
 
-}
-
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-public void HoodTurnLeft(){
-=======
-<<<<<<< HEAD
-public void LiftUp(){
-
-  RightMotor.set(-1);
-=======
-public void HoodTurnLeft(){
->>>>>>> master
->>>>>>> Stashed changes
-=======
 public void HoodPositionUp(){
->>>>>>> Colin-2-1/16/2020
 
   Motor.set(1);
 
 }
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-public void HoodTurnRight(){
-=======
-<<<<<<< HEAD
-public void LiftDown(){
->>>>>>> Stashed changes
-
-RightMotor.set(1);
-
-}
-
-<<<<<<< Updated upstream
-public void HoodStop(){
-=======
-public void LiftStop(){
-=======
-public void HoodTurnRight(){
-
-RightMotor.set(1);
-=======
 public void HoodPositionDown(){
->>>>>>> Colin-2-1/16/2020
-
-  Motor.set(1);
+  Motor.set(-1);
 }
-  public void HoodPositionStop(){
 
-<<<<<<< HEAD
 public void HoodStop(){
->>>>>>> master
->>>>>>> Stashed changes
-=======
-    Motor.set(0);
-  
->>>>>>> Colin-2-1/16/2020
 
-
-  
+  Motor.set(0);
 }
-
 
 
   @Override
@@ -94,14 +42,4 @@ public void HoodStop(){
     // This method will be called once per scheduler run
   }
 }
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> master
->>>>>>> Stashed changes
-=======
->>>>>>> Colin-2-1/16/2020

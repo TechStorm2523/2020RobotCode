@@ -16,7 +16,7 @@ public class CommandHood extends CommandBase {
   HoodPosition m_hoodPosition;
   public CommandHood(HoodPosition hoodPosition) {
     // Use addRequirements() here to declare subsystem dependencies.
-    HoodPosition m_hoodPosition;
+    m_hoodPosition = hoodPosition;
     addRequirements(m_hoodPosition);
   }
 
@@ -34,7 +34,7 @@ public class CommandHood extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_hoodPosition.
+    m_hoodPosition.HoodStop();
   }
 
   // Returns true when the command should end.
