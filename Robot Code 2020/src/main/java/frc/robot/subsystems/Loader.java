@@ -7,15 +7,36 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class TurretSub extends SubsystemBase {
+public class Loader extends SubsystemBase {
   /**
-   * Creates a new TurretSub.
+   * Creates a new LiftSub.
    */
-  public TurretSub() {
+
+  WPI_TalonSRX BeltMotor = new WPI_TalonSRX(0);
+
+  public Loader() {
 
   }
+
+public void loader(){
+
+}
+
+public void LoaderBeltActivator(){
+
+  BeltMotor.set(1);
+
+}
+
+public void LoaderBeltStop(){
+
+BeltMotor.set(0);
+}
+
 
   @Override
   public void periodic() {
