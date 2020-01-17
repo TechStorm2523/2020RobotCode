@@ -16,17 +16,17 @@ import frc.robot.commands.CommandIntake;
 import frc.robot.commands.CommandLift;
 import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
-import frc.robot.commands.CommandLoaderBelt;
+import frc.robot.commands.LoaderC;
 import frc.robot.commands.ExampleCommand;
-
+import frc.robot.commands.LoaderC;
 import frc.robot.subsystems.DriveTrain;
 
 import frc.robot.commands.CommandIntake;
 
 import frc.robot.subsystems.ExampleSubsystem;
 
-import frc.robot.subsystems.LiftSub;
-import frc.robot.subsystems.LoaderSub;
+import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Loader;
 import frc.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj2.command.Command;
@@ -50,9 +50,9 @@ public class RobotContainer {
   
   private final Intake m_intake = new Intake();
 
-private final LoaderSub m_loaderSub = new LoaderSub();
+private final Loader m_loaderSub = new Loader();
 
-private final LiftSub m_liftSub = new LiftSub();
+private final Lift m_liftSub = new Lift();
 
 
   private final CommandIntake m_intakeFeed = new CommandIntake(m_intake);
@@ -93,7 +93,7 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
     final JoystickButton thumb = new JoystickButton(userStick, 2);
 
     
-    thumb.whileHeld(new CommandLoaderBelt(m_loaderSub));
+    thumb.whileHeld(new LoaderC(m_loaderSub));
 
   }
 

@@ -35,7 +35,7 @@ public class TurretRight extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_turretMovement.TurretSpin(0);
+    m_turretMovement.TurretStop();
   }
 
   // Returns true when the command should end.

@@ -8,16 +8,16 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.LiftSub;
+import frc.robot.subsystems.Lift;
 
 public class CommandLiftUp extends CommandBase {
   /**
    * Creates a new CommandLift.
    */
 
-   LiftSub m_liftSub;
+   Lift m_liftSub;
 
-  public CommandLiftUp(LiftSub liftSub) {
+  public CommandLiftUp(Lift liftSub) {
 
 m_liftSub = liftSub;
 
