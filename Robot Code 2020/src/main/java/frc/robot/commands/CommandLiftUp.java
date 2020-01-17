@@ -15,9 +15,15 @@ public class CommandLiftUp extends CommandBase {
    * Creates a new CommandLift.
    */
 
+<<<<<<< HEAD
+   Lift m_liftSub;
+
+  public CommandLiftUp(Lift liftSub) {
+=======
    Lift m_lift;
 
   public CommandLiftUp(Lift lift) {
+>>>>>>> 86508624fd7829abc69ac8ecaf13319a56bb8b0e
 
 m_lift = lift;
 
