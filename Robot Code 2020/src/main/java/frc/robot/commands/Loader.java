@@ -8,14 +8,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.LoaderSub;
+import frc.robot.subsystems.Loader;
 
 public class Loader extends CommandBase {
   /**
    * Creates a new intakeFeed.
    */
-  LoaderSub m_loader;
-  public Loader(LoaderSub loader) {
+  Loader m_loader;
+  public Loader(Loader loader) {
     m_loader = loader;
     addRequirements(m_loader);
     // Use addRequirements() here to declare subsystem dependencies.
