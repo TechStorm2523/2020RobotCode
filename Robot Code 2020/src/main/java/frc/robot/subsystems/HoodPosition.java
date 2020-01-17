@@ -7,35 +7,51 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-public class Turret extends SubsystemBase {
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+public class HoodPosition extends SubsystemBase {
   /**
-   * Creates a new TurretMovement.
+   * Creates a new LiftSub.
    */
-  WPI_TalonSRX TurretMovement = new WPI_TalonSRX(69);
-  public Turret() {
+
+  WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
+  WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
+
+  public HoodPosition() {
 
   }
-  public void TurretSpinClockwise(){
-    TurretMovement.set(1);
-    
 
-  }
-  public void TurretSpinCounterClockwise(){
-    TurretMovement.set(-1);
-    
+public void Hoodposition(){
 
-  }
-  /*
-  public void TurretSpin(double Speed){
-    TurretMovement.set(Speed);
+}
 
-  }
-*/
+public void HoodTurnLeft(){
+
+  LeftMotor.set(1);
+
+}
+
+public void HoodTurnRight(){
+
+RightMotor.set(1);
+
+}
+
+public void HoodStop(){
+
+  RightMotor.set(0);
+
+  LeftMotor.set(0);
+  
+}
+
+
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
 }
+

@@ -6,7 +6,7 @@
 /*----------------------------------------------------------------------------*/
 
 // THIS IS FOR THE LAUNCHER FLYWHEEL
-
+/*
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -16,6 +16,7 @@ public class spinFlyWheel extends CommandBase {
   /**
    * Creates a new spinFlyWheel.
    */
+  /*
   Launcher m_Launcher;
   public spinFlyWheel(Launcher launcher) {
     m_Launcher = launcher;
@@ -46,3 +47,4 @@ public class spinFlyWheel extends CommandBase {
     return false;
   }
 }
+*/

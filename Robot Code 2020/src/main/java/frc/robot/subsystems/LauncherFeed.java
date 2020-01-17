@@ -8,32 +8,15 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-public class Turret extends SubsystemBase {
+public class LauncherFeed extends SubsystemBase {
   /**
-   * Creates a new TurretMovement.
+   * Creates a new LauncherFeed.
    */
-  WPI_TalonSRX TurretMovement = new WPI_TalonSRX(69);
-  public Turret() {
+  public LauncherFeed() {
 
   }
-  public void TurretSpinClockwise(){
-    TurretMovement.set(1);
-    
 
-  }
-  public void TurretSpinCounterClockwise(){
-    TurretMovement.set(-1);
-    
-
-  }
-  /*
-  public void TurretSpin(double Speed){
-    TurretMovement.set(Speed);
-
-  }
-*/
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
