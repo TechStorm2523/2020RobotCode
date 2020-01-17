@@ -11,18 +11,18 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class LoaderSub extends SubsystemBase {
+public class Loader extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
 
   WPI_TalonSRX BeltMotor = new WPI_TalonSRX(0);
 
-  public LoaderSub() {
+  public Loader() {
 
   }
 
-public void Loadersub(){
+public void loader(){
 
 }
 

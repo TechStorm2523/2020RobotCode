@@ -16,17 +16,17 @@ import frc.robot.commands.CommandIntake;
 import frc.robot.commands.CommandLift;
 import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
-import frc.robot.commands.CommandLoaderBelt;
+import frc.robot.commands.LoaderC;
 import frc.robot.commands.ExampleCommand;
-
+import frc.robot.commands.LoaderC;
 import frc.robot.subsystems.DriveTrain;
 
 import frc.robot.commands.CommandIntake;
 
 import frc.robot.subsystems.ExampleSubsystem;
 
-import frc.robot.subsystems.LiftSub;
-import frc.robot.subsystems.LoaderSub;
+import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Loader;
 import frc.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj2.command.Command;
@@ -50,15 +50,21 @@ public class RobotContainer {
   
   private final Intake m_intake = new Intake();
 
-private final LoaderSub m_loaderSub = new LoaderSub();
+<<<<<<< HEAD
+private final Loader m_loaderSub = new Loader();
 
-private final LiftSub m_liftSub = new LiftSub();
+private final Lift m_liftSub = new Lift();
+=======
+private final Loader m_loader = new Loader();
+
+private final Lift m_lift = new Lift();
+>>>>>>> 86508624fd7829abc69ac8ecaf13319a56bb8b0e
 
 
   private final CommandIntake m_intakeFeed = new CommandIntake(m_intake);
 
 
-private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
+private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_lift);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -87,13 +93,17 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_liftSub);
     final JoystickButton ANGERYBUTTON = new JoystickButton(userStick, 4);
     
 
-    ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_liftSub));
-    ANGERYBUTTON.whileHeld(new CommandLiftUp(m_liftSub));
+    ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_lift));
+    ANGERYBUTTON.whileHeld(new CommandLiftUp(m_lift));
 
     final JoystickButton thumb = new JoystickButton(userStick, 2);
 
     
-    thumb.whileHeld(new CommandLoaderBelt(m_loaderSub));
+<<<<<<< HEAD
+    thumb.whileHeld(new LoaderC(m_loaderSub));
+=======
+    thumb.whileHeld(new CommandLoaderBelt(m_loader));
+>>>>>>> 86508624fd7829abc69ac8ecaf13319a56bb8b0e
 
   }
 

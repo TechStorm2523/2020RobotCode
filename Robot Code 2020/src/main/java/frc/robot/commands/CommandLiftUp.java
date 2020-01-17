@@ -8,27 +8,33 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.LiftSub;
+import frc.robot.subsystems.Lift;
 
 public class CommandLiftUp extends CommandBase {
   /**
    * Creates a new CommandLift.
    */
 
-   LiftSub m_liftSub;
+<<<<<<< HEAD
+   Lift m_liftSub;
 
-  public CommandLiftUp(LiftSub liftSub) {
+  public CommandLiftUp(Lift liftSub) {
+=======
+   Lift m_lift;
 
-m_liftSub = liftSub;
+  public CommandLiftUp(Lift lift) {
+>>>>>>> 86508624fd7829abc69ac8ecaf13319a56bb8b0e
 
-    addRequirements(m_liftSub);
+m_lift = lift;
+
+    addRequirements(m_lift);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_liftSub.LiftUp();
+    m_lift.LiftUp();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -40,7 +46,7 @@ m_liftSub = liftSub;
   @Override
   public void end(boolean interrupted) {
  
-    m_liftSub.LiftStop();
+    m_lift.LiftStop();
  
   }
 

@@ -8,24 +8,22 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.LoaderSub;
-
-public class Loader extends CommandBase {
+import frc.robot.subsystems.HoodPosition;
+public class CommandHood extends CommandBase {
   /**
-   * Creates a new intakeFeed.
+   * Creates a new CommandHood.
    */
-  LoaderSub m_loader;
-  public Loader(LoaderSub loader) {
-    m_loader = loader;
-    addRequirements(m_loader);
+  HoodPosition m_hoodPosition;
+  public CommandHood(HoodPosition hoodPosition) {
     // Use addRequirements() here to declare subsystem dependencies.
+    HoodPosition m_hoodPosition;
+    addRequirements(m_hoodPosition);
   }
-
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_loader.LoaderBeltActivator();
+    m_hoodPosition.HoodPositionUp();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -36,9 +34,8 @@ public class Loader extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_loader.LoaderBeltStop();
+    m_hoodPosition.
   }
-  
 
   // Returns true when the command should end.
   @Override

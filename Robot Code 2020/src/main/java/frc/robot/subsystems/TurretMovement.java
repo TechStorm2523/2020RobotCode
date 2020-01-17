@@ -23,23 +23,17 @@ public class TurretMovement extends SubsystemBase {
   public void TurretSpinClockwise(){
     TurretMovement.set(1);
     
+
   }
   public void TurretSpinCounterClockwise(){
     TurretMovement.set(-1);
-    
-  }
-  /*
-  public void TurretSpin(double Speed){
-    TurretMovement.set(Speed);
+    //taco's man..  
+    // MMM
 
+  } 
+  public void TurretStop(){
+    TurretMovement.set(0);
   }
-*/
-/*
-  public void TurretSpin(double Speed){
-    TurretMovement.set(Speed);
-
-  }
-  */
 
   @Override
   public void periodic() {

@@ -8,27 +8,27 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.LoaderSub;
+import frc.robot.subsystems.Loader;
 
 public class CommandLoaderBelt extends CommandBase {
   /**
    * Creates a new CommandLift.
    */
 
-   LoaderSub m_loaderSub;
+   Loader m_loader;
 
-  public CommandLoaderBelt(LoaderSub LoaderSub) {
+  public CommandLoaderBelt(Loader LoaderSub) {
 
-m_loaderSub = LoaderSub;
+m_loader = LoaderSub;
 
-    addRequirements(m_loaderSub);
+    addRequirements(m_loader);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_loaderSub.Loadersub();
+    m_loader.loader();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -40,7 +40,7 @@ m_loaderSub = LoaderSub;
   @Override
   public void end(boolean interrupted) {
  
-    m_loaderSub.Loadersub();
+    m_loader.loader();
  
   }
 

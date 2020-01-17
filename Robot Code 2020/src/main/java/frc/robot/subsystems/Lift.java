@@ -7,15 +7,45 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class TurretSub extends SubsystemBase {
+public class Lift extends SubsystemBase {
   /**
-   * Creates a new TurretSub.
+   * Creates a new LiftSub.
    */
-  public TurretSub() {
 
-  }
+  WPI_TalonSRX LeftMotor = new WPI_TalonSRX(0);
+  WPI_TalonSRX RightMotor = new WPI_TalonSRX(1);
+
+  
+
+public void LiftUp(){
+
+  RightMotor.set(-1);
+
+  LeftMotor.set(1);
+
+}
+
+public void LiftDown(){
+
+RightMotor.set(1);
+
+LeftMotor.set(-1);
+
+}
+
+public void LiftStop(){
+
+  RightMotor.set(0);
+
+  LeftMotor.set(0);
+  
+}
+
+
 
   @Override
   public void periodic() {
