@@ -18,10 +18,7 @@ import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
 import frc.robot.commands.LoaderC;
 import frc.robot.commands.ExampleCommand;
-import frc.robot.commands.LoaderC;
 import frc.robot.subsystems.DriveTrain;
-
-import frc.robot.commands.CommandIntake;
 
 import frc.robot.subsystems.ExampleSubsystem;
 
@@ -79,16 +76,15 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_lift);
     final JoystickButton trigger = new JoystickButton(userStick, 1);
     
     //final JoystickButton thumb = new JoystickButton(userStick, 2);
-
     //thumb.whileHeld(new intakeFeed(m_intake));
 
-    final JoystickButton ANGRIERBUTTON = new JoystickButton(userStick, 3);
+    final JoystickButton LiftUpButton = new JoystickButton(userStick, 3);
 
-    final JoystickButton ANGERYBUTTON = new JoystickButton(userStick, 4);
+    final JoystickButton LiftDownButton = new JoystickButton(userStick, 4);
     
 
-    ANGRIERBUTTON.whileHeld(new CommandLiftDown(m_lift));
-    ANGERYBUTTON.whileHeld(new CommandLiftUp(m_lift));
+    LiftUpButton.whileHeld(new CommandLiftUp(m_lift));
+    LiftDownButton.whileHeld(new CommandLiftDown(m_lift));
 
     final JoystickButton thumb = new JoystickButton(userStick, 2);
 
