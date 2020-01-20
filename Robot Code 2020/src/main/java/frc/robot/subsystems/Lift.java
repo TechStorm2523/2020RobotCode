@@ -8,7 +8,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
-
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Lift extends SubsystemBase {
@@ -16,7 +16,7 @@ public class Lift extends SubsystemBase {
    * Creates a new LiftSub.
    */
 
-  WPI_TalonFX LiftMotor = new WPI_TalonFX(0);
+  WPI_TalonFX LiftMotor = new WPI_TalonFX(Constants.m_lift);
 
   
 

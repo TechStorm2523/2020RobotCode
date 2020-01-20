@@ -15,16 +15,17 @@ import edu.wpi.first.wpilibj2.command.PIDSubsystem;
 import frc.robot.commands.ControlDrive;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.Constants;
 
 public class DriveTrain extends PIDSubsystem {
   /**
    * Creates a new DriveTrain.
    */
 //Motor Declarations Go Here 
-WPI_TalonFX FrontLeft = new WPI_TalonFX(0);
-WPI_TalonFX FrontRight = new WPI_TalonFX(1);
-WPI_TalonFX BackLeft = new WPI_TalonFX(2);
-WPI_TalonFX BackRight = new WPI_TalonFX(3);
+WPI_TalonFX FrontLeft = new WPI_TalonFX(Constants.lf);
+WPI_TalonFX FrontRight = new WPI_TalonFX(Constants.rf);
+WPI_TalonFX BackLeft = new WPI_TalonFX(Constants.lb);
+WPI_TalonFX BackRight = new WPI_TalonFX(Constants.rb);
 SpeedControllerGroup LeftSide = new SpeedControllerGroup(FrontLeft, BackLeft);
 SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight);
 

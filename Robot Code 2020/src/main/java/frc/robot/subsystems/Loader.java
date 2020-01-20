@@ -8,7 +8,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Loader extends SubsystemBase {
@@ -16,7 +16,7 @@ public class Loader extends SubsystemBase {
    * Creates a new LiftSub.
    */
 
-  WPI_TalonSRX BeltMotor = new WPI_TalonSRX(0);
+  WPI_TalonSRX BeltMotor = new WPI_TalonSRX(Constants.m_loader);
 
   public Loader() {
 
