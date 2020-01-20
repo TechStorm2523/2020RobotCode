@@ -16,13 +16,22 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 
-public class RobotMap {}
-
-public static int leftmotorim_Port = 1;
-
-public static int _Port = 2;
-
-public static int _Port = 3;
-
 public final class Constants {
+
+public static int m_intake = 15;
+public static int m_loader = 11;
+public static int m_turret = 13;
+public static int m_hood = 14;
+public static int m_launcher = 5;
+public static int m_manipulator = 16;
+public static int m_lift = 6;
+
+//drive train
+
+public static int lf = 1;
+public static int lb = 2;
+public static int rf = 3;
+public static int rb = 4;
+
+
 }

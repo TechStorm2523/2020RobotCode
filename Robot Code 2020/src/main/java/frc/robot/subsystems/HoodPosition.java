@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class HoodPosition extends SubsystemBase {
   /**
@@ -19,7 +20,7 @@ public class HoodPosition extends SubsystemBase {
 
   }
 
-  WPI_TalonSRX Motor = new WPI_TalonSRX(0);
+  WPI_TalonSRX Motor = new WPI_TalonSRX(Constants.m_hood);
 
 public void HoodPositionUp(){
 

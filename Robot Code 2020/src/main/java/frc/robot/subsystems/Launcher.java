@@ -10,12 +10,13 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Launcher extends SubsystemBase {
   /*
    * Creates a new Launcher.
    */
-  WPI_TalonSRX LauncherWheel = new WPI_TalonSRX(0);
+  WPI_TalonSRX LauncherWheel = new WPI_TalonSRX(Constants.m_launcher);
 
   public Launcher() {
 

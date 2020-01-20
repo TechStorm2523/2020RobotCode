@@ -8,14 +8,14 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Manipulator extends SubsystemBase {
   /**
    * Creates a new Manipulator.
    */
-  WPI_TalonSRX Manipulator = new WPI_TalonSRX(4);
+  WPI_TalonSRX Manipulator = new WPI_TalonSRX(Constants.m_manipulator);
    public Manipulator() {
 
   }
