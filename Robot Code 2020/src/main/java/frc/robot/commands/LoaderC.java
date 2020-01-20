@@ -15,7 +15,7 @@ public class LoaderC extends CommandBase {
    * Creates a new intakeFeed.
    */
   Loader m_loader;
-  public LoaderC (Loader loader) {
+  public LoaderC (Loader loader, Loader Loader) {
 
     m_loader = loader;
     
@@ -27,7 +27,7 @@ public class LoaderC extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_loader.LoaderBeltActivator();
+    (m_loader).LoaderBeltActivator();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
