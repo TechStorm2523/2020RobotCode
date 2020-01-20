@@ -25,7 +25,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Loader;
 import frc.robot.subsystems.Intake;
-
+import frc.robot.subsystems.Launcher;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
@@ -56,6 +56,11 @@ private final Lift m_lift = new Lift();
 
 
 private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_lift);
+
+private final Launcher m_launcher = new Launcher();
+
+  private final ExampleCommand m_ = new ExampleCommand(m_exampleSubsystem);
+
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
