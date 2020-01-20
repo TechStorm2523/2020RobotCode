@@ -89,7 +89,7 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_lift);
     final JoystickButton thumb = new JoystickButton(userStick, 2);
 
     
-    thumb.whileHeld(new LoaderC(m_loaderSub));
+    thumb.whileHeld(new LoaderC(m_loaderSub, m_loaderSub));
 
   }
 
