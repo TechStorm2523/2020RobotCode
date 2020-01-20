@@ -7,15 +7,38 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class LauncherFeed extends SubsystemBase {
   /**
-   * Creates a new LauncherFeed.
+   * Creates a new LiftSub.
    */
-  public LauncherFeed() {
 
-  }
+  WPI_TalonFX LiftMotor = new WPI_TalonFX(0);
+
+  
+
+public void LoadUp(){
+
+  LiftMotor.set(1);
+
+}
+
+public void LoadDown(){
+
+LiftMotor.set(-1);
+
+}
+
+public void LoadStop(){
+
+  LiftMotor.set(0);
+  
+}
+
+
 
   @Override
   public void periodic() {
