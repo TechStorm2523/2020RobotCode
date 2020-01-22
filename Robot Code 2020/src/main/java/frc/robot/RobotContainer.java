@@ -42,7 +42,7 @@ public class RobotContainer {
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
   private final DriveTrain m_driveTrain = new DriveTrain();
-  private final ControlDrive m_controlDrive = new ControlDrive(m_driveTrain);
+  private final ControlDrive m_controlDrive = new ControlDrive();
 
   
   private final Intake m_intake = new Intake();

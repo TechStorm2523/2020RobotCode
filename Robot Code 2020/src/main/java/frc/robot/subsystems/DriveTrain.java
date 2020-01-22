@@ -42,8 +42,11 @@ SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight)
     LeftSide.set(Left);
     RightSide.set(Right); 
     
-
   }
+  public void defaultCommand(){
+    setDefaultCommand(new ControlDrive());
+  }
+  
 
 
 

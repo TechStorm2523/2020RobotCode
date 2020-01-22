@@ -22,8 +22,7 @@ public class ControlDrive extends CommandBase {
    */
   DriveTrain m_driveTrain;
 
-  public ControlDrive(DriveTrain driveTrain) {
-    m_driveTrain = driveTrain;
+  public ControlDrive(){
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(m_driveTrain);
   }
