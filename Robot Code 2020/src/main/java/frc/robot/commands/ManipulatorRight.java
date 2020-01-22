@@ -8,18 +8,22 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Manipulator;
 
 public class ManipulatorRight extends CommandBase {
   /**
    * Creates a new ManipulatorRight.
    */
-  public ManipulatorRight() {
-    // Use addRequirements() here to declare subsystem dependencies.
+  Manipulator m_manipulator;
+  public ManipulatorRight(Manipulator manipulator) {
+    m_manipulator = manipulator;
+    addRequirements(m_manipulator);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    m_manipulator.SpinClockwise();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -30,6 +34,7 @@ public class ManipulatorRight extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    m_manipulator.Spin(0);
   }
 
   // Returns true when the command should end.
@@ -38,3 +43,4 @@ public class ManipulatorRight extends CommandBase {
     return false;
   }
 }
+
