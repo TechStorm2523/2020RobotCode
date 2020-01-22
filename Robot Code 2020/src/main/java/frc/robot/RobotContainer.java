@@ -17,6 +17,7 @@ import frc.robot.commands.CommandLift;
 import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
 import frc.robot.commands.LoaderC;
+import frc.robot.commands.SpinFlyWheel;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveTrain;
 
@@ -59,7 +60,9 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_lift);
 
 private final Launcher m_launcher = new Launcher();
 
+  private final SpinFlyWheel m_spinFlyWheel = new SpinFlyWheel(m_launcher);
   private final ExampleCommand m_ = new ExampleCommand(m_exampleSubsystem);
+
 
 
   /**
@@ -84,9 +87,15 @@ private final Launcher m_launcher = new Launcher();
     //thumb.whileHeld(new intakeFeed(m_intake));
 
     final JoystickButton LiftUpButton = new JoystickButton(userStick, 3);
-
     final JoystickButton LiftDownButton = new JoystickButton(userStick, 4);
-    
+
+    LiftUpButton.whileHeld(new CommandLiftUp(m_lift));
+    LiftDownButton.whileHeld(new CommandLiftDown(m_lift));
+
+
+    final JoystickButton launcherButton = new JoystickButton(userStick, 1);
+
+    launcherButton.whileHeld(new SpinFlyWheel(m_launcher));
 
     LiftUpButton.whileHeld(new CommandLiftUp(m_lift));
     LiftDownButton.whileHeld(new CommandLiftDown(m_lift));
