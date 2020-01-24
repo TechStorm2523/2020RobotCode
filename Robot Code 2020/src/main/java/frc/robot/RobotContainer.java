@@ -17,6 +17,7 @@ import frc.robot.commands.CommandLift;
 import frc.robot.commands.CommandLiftDown;
 import frc.robot.commands.CommandLiftUp;
 import frc.robot.commands.LoaderC;
+import frc.robot.commands.SpinFlyWheel;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.commands.SpinFlyWheel;
@@ -59,9 +60,15 @@ private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_lift);
 
 private final Launcher m_launcher = new Launcher();
 
+  private final SpinFlyWheel m_spinFlyWheel = new SpinFlyWheel(m_launcher);
   private final ExampleCommand m_ = new ExampleCommand(m_exampleSubsystem);
 
+<<<<<<< HEAD
 private final SpinFlyWheel m_spinFlyWheel = new SpinFlyWheel(m_launcher);
+=======
+
+
+>>>>>>> 15ce39114a9f15d832c6c515e9ba8654eeddb57b
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -86,9 +93,15 @@ private final SpinFlyWheel m_spinFlyWheel = new SpinFlyWheel(m_launcher);
     //thumb.whileHeld(new intakeFeed(m_intake));
 
     final JoystickButton LiftUpButton = new JoystickButton(userStick, 3);
-
     final JoystickButton LiftDownButton = new JoystickButton(userStick, 4);
-    
+
+    LiftUpButton.whileHeld(new CommandLiftUp(m_lift));
+    LiftDownButton.whileHeld(new CommandLiftDown(m_lift));
+
+
+    final JoystickButton launcherButton = new JoystickButton(userStick, 1);
+
+    launcherButton.whileHeld(new SpinFlyWheel(m_launcher));
 
     LiftUpButton.whileHeld(new CommandLiftUp(m_lift));
     LiftDownButton.whileHeld(new CommandLiftDown(m_lift));

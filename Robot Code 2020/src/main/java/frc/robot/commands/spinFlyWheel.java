@@ -16,9 +16,14 @@ public class SpinFlyWheel extends CommandBase {
   /**
    * Creates a new spinFlyWheel.
    */
+<<<<<<< HEAD
 
   Launcher m_Launcher;
 
+=======
+  
+  Launcher m_Launcher;
+>>>>>>> 15ce39114a9f15d832c6c515e9ba8654eeddb57b
   public SpinFlyWheel(Launcher launcher) {
     m_Launcher = launcher;
     addRequirements(m_Launcher);
