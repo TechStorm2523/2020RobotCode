@@ -6,19 +6,20 @@
 /*----------------------------------------------------------------------------*/
 
 // THIS IS FOR THE LAUNCHER FLYWHEEL
-/*
+
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Launcher;
 
-public class spinFlyWheel extends CommandBase {
+public class SpinFlyWheel extends CommandBase {
   /**
    * Creates a new spinFlyWheel.
    */
-  /*
+
   Launcher m_Launcher;
-  public spinFlyWheel(Launcher launcher) {
+
+  public SpinFlyWheel(Launcher launcher) {
     m_Launcher = launcher;
     addRequirements(m_Launcher);
     // Use addRequirements() here to declare subsystem dependencies.
@@ -47,4 +48,3 @@ public class spinFlyWheel extends CommandBase {
     return false;
   }
 }
-*/

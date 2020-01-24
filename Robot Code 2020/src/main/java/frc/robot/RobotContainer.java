@@ -19,7 +19,7 @@ import frc.robot.commands.CommandLiftUp;
 import frc.robot.commands.LoaderC;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveTrain;
-
+import frc.robot.commands.SpinFlyWheel;
 import frc.robot.subsystems.ExampleSubsystem;
 
 import frc.robot.subsystems.Lift;
@@ -36,13 +36,15 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
  * (including subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
+  public static XboxController xb = new XboxController(0);
+
+// The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
   private final DriveTrain m_driveTrain = new DriveTrain();
-  private final ControlDrive m_controlDrive = new ControlDrive();
+  private final ControlDrive m_controlDrive = new ControlDrive(m_driveTrain);
 
   
   private final Intake m_intake = new Intake();
@@ -51,9 +53,7 @@ private final Loader m_loaderSub = new Loader();
 
 private final Lift m_lift = new Lift();
 
-
   private final CommandIntake m_intakeFeed = new CommandIntake(m_intake);
-
 
 private final CommandLiftUp m_commandLiftUp = new CommandLiftUp(m_lift);
 
@@ -61,7 +61,7 @@ private final Launcher m_launcher = new Launcher();
 
   private final ExampleCommand m_ = new ExampleCommand(m_exampleSubsystem);
 
-
+private final SpinFlyWheel m_spinFlyWheel = new SpinFlyWheel(m_launcher);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -78,6 +78,8 @@ private final Launcher m_launcher = new Launcher();
    */
   private void configureButtonBindings() {
     final Joystick userStick = new Joystick(1);
+    
+    
     final JoystickButton trigger = new JoystickButton(userStick, 1);
     
     //final JoystickButton thumb = new JoystickButton(userStick, 2);

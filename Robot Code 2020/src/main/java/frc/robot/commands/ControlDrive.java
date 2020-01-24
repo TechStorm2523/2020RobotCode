@@ -7,9 +7,8 @@
 
 package frc.robot.commands;
 
-
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 import frc.robot.Robot;
@@ -22,9 +21,12 @@ public class ControlDrive extends CommandBase {
    */
   DriveTrain m_driveTrain;
 
-  public ControlDrive(){
-    // Use addRequirements() here to declare subsystem dependencies.
+  public ControlDrive(DriveTrain drive) {
+
+m_driveTrain = drive;
+
     addRequirements(m_driveTrain);
+
   }
 
   // Called when the command is initially scheduled.
@@ -35,8 +37,9 @@ public class ControlDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    XboxController xb = new XboxController(1);
-    m_driveTrain.Drive(xb.getY(), xb.getX());
+    
+    m_driveTrain.Drive(RobotContainer.xb.getY(Hand.kRight), RobotContainer.xb.getX(Hand.kLeft));
+   
   }
 
   // Called once the command ends or is interrupted.

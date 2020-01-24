@@ -30,6 +30,7 @@ SpeedControllerGroup LeftSide = new SpeedControllerGroup(FrontLeft, BackLeft);
 SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight);
 
 
+
   public DriveTrain() {
     super(
         // The PIDController used by the subsystem
@@ -38,14 +39,24 @@ SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight)
   public void methodname(){
 
   }
+  
   public void Drive(double Left, double Right){
     LeftSide.set(Left);
     RightSide.set(Right); 
-    
+    /*
+    FrontLeft.set(Left);
+    BackLeft.set(Left);
+    FrontRight.set(Right);
+    BackRight.set(Right);
+    */
+
+    //setDefaultCommand(new ControlDrive());
   }
+  
   public void defaultCommand(){
-    setDefaultCommand(new ControlDrive());
+    //
   }
+  
   
 
 
