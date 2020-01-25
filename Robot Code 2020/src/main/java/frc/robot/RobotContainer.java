@@ -63,13 +63,7 @@ private final Launcher m_launcher = new Launcher();
   private final SpinFlyWheel m_spinFlyWheel = new SpinFlyWheel(m_launcher);
   private final ExampleCommand m_ = new ExampleCommand(m_exampleSubsystem);
 
-<<<<<<< HEAD
-private final SpinFlyWheel m_spinFlyWheel = new SpinFlyWheel(m_launcher);
-=======
-
-
->>>>>>> 15ce39114a9f15d832c6c515e9ba8654eeddb57b
-  /**
+/*
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
