@@ -15,7 +15,7 @@ public class CommandHoodDown extends CommandBase {
      * Creates a new CommandHood.
      */
     HoodPosition m_hoodPosition;
-    DigitalInput HoodLimSwitch = new DigitalInput(2);
+    
 
     public CommandHoodDown(HoodPosition hoodPosition) {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -26,7 +26,7 @@ public class CommandHoodDown extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    while(!HoodLimSwitch.get()){
+    while(!m_hoodPosition.HoodLimSwitch()){
     m_hoodPosition.HoodPositionDown(); 
     }
     

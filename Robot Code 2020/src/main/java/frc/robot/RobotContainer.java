@@ -146,8 +146,8 @@ public class RobotContainer {
     final JoystickButton ColorSensor = new JoystickButton(userStick, 7);
     final JoystickButton PixyCamButton = new JoystickButton(userStick, 8);
     //This is supposed to be the limit switch that turns on the Loader while held.
-    DigitalInput IntakeLimSwitch = new DigitalInput(0);
-    DigitalInput HoodLimSwitch = new DigitalInput(2);
+    //DigitalInput IntakeLimSwitch = new DigitalInput(0);
+    //DigitalInput HoodLimSwitch = new DigitalInput(2);
     //Counter motorCounter = new Counter(new DigitalInput(1));
     
     //private void DigitalInput(IntakeLimSwitch);

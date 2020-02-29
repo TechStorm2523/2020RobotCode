@@ -8,6 +8,8 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.DigitalInput;
+
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -18,7 +20,7 @@ public class HoodPosition extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
-
+  DigitalInput HoodLimSwitch = new DigitalInput(2);
   Counter motorCounter = new Counter();
   public HoodPosition(){
 
@@ -50,6 +52,9 @@ private int position = 0;
        position -= motorCounter.get();
     }
     motorCounter.reset();
+ }
+ public boolean HoodLimSwitch(){
+   return HoodLimSwitch.get();
  }
 }
 
