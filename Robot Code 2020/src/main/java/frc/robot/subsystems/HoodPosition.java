@@ -20,7 +20,7 @@ public class HoodPosition extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
-  DigitalInput HoodLimSwitch = new DigitalInput(2);
+  DigitalInput HoodLimSwitch = new DigitalInput(6);
   Counter motorCounter = new Counter();
   public HoodPosition(){
 

@@ -10,12 +10,14 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Constants;
 import frc.robot.commands.LoaderC;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Loader extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
+  DigitalInput IntakeLimSwitch = new DigitalInput(0);
 
   WPI_TalonSRX BeltMotor = new WPI_TalonSRX(Constants.m_loader);
 
@@ -38,6 +40,9 @@ public void LoaderBeltActivator(){
 public void LoaderBeltStop(){
 
 BeltMotor.set(0);
+}
+public boolean IntakeLimSwitch(){
+  return IntakeLimSwitch.get();
 }
 
 

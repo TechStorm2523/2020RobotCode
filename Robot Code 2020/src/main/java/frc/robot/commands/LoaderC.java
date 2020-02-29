@@ -15,7 +15,6 @@ public class LoaderC extends CommandBase {
   /**
    * Creates a new intakeFeed.
    */
-  DigitalInput IntakeLimSwitch = new DigitalInput(0);
   Loader m_loader;
   public LoaderC () {
         addRequirements(m_loader);
@@ -32,7 +31,7 @@ public class LoaderC extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    while(IntakeLimSwitch.get()){
+    while(m_loader.IntakeLimSwitch()){
       m_loader.LoaderBeltActivator();
     }
   }
