@@ -19,15 +19,16 @@ package frc.robot;
 public final class Constants {
 
 public static int m_intake = 15;
-public static int m_loader = 11;
-public static int m_turret = 13;
+public static int m_loader = 12;
+public static int m_turret = 13;//should be Done
 public static int m_hood = 14;
-public static int m_launcher = 5;
+public static int m_launcher = 5;//Done
 public static int m_manipulator = 16;
-public static int m_lift = 6;
+public static int m_lift = 6;//Done
+public static int m_launcherFeed = 11;//Done
+public static int m_PixyCam; //not done
 
-//drive train
-
+//drive train: Done
 public static int lf = 1;
 public static int lb = 2;
 public static int rf = 3;

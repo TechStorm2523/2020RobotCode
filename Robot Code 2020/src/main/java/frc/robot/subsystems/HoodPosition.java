@@ -7,8 +7,10 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Counter;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -16,6 +18,8 @@ public class HoodPosition extends SubsystemBase {
   /**
    * Creates a new LiftSub.
    */
+
+  Counter motorCounter = new Counter();
   public HoodPosition(){
 
   }
@@ -36,11 +40,16 @@ public void HoodStop(){
 
   Motor.set(0);
 }
-
-
+boolean goingforward;
+private int position = 0;
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
-  }
+    if (goingforward) {
+       position += motorCounter.get();
+    } else {
+       position -= motorCounter.get();
+    }
+    motorCounter.reset();
+ }
 }
 

@@ -6,12 +6,18 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.cscore.VideoMode.PixelFormat;
+import edu.wpi.first.cameraserver.CameraServer;
 import frc.robot.commands.ControlDrive;
+import frc.robot.commands.TurretCommand;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.HoodPosition;
+
 import frc.robot.subsystems.TurretMovement;
 import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -24,10 +30,14 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 public class Robot extends TimedRobot {
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static HoodPosition m_hPosition  = new HoodPosition();
-  public static TurretMovement tm  = new TurretMovement();
+  public static TurretMovement m_turretMovement  = new TurretMovement();
+  private final TurretCommand m_turretCommand = new TurretCommand(m_turretMovement);
   public static ControlDrive controlDrive = new ControlDrive(m_driveTrain);
+
   public static RobotContainer rc = new RobotContainer();
   private Command m_autonomousCommand;
+
+
 
   private RobotContainer m_robotContainer;
 
@@ -39,6 +49,11 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
+    UsbCamera cam1 = CameraServer.getInstance().startAutomaticCapture();
+    
+    
+    cam1.setVideoMode(PixelFormat.kMJPEG, 320, 240, 15);
+    
     
   }
 
@@ -51,12 +66,14 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+
     // Runs the Scheduler.  This is responsible for polling buttons, adding newly-scheduled
     // commands, running already-scheduled commands, removing finished or interrupted commands,
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     controlDrive.execute();
+    m_turretCommand.execute();
   }
 
   /**
@@ -92,6 +109,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
@@ -106,6 +124,11 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    //SmartDashboard.putNumber("Test", 134)
+   
+  
+   SmartDashboard.putString("Motor rpms", rc.getMotorRPMs());
+   
   }
 
   @Override

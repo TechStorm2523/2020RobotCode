@@ -6,48 +6,48 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
+import edu.wpi.first.wpilibj.Counter;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotContainer;
-import frc.robot.subsystems.DriveTrain;
-
-public class ControlDrive extends CommandBase {
+import frc.robot.subsystems.HoodPosition;
+public class CommandHoodUp extends CommandBase {
   /**
-   * Creates a new ControlDrive.
+   * Creates a new CommandHood.
    */
-  DriveTrain m_driveTrain;
 
-  public ControlDrive(DriveTrain drive) {
+  /*Counter myCounter = new Counter(1);
+  double distance = myCounter.getDistance(); */
+ 
 
-m_driveTrain = drive;
 
-    addRequirements(m_driveTrain);
 
+  HoodPosition m_hoodPosition;
+  public CommandHoodUp(HoodPosition hoodPosition) {
+    // Use addRequirements() here to declare subsystem dependencies.
+    m_hoodPosition = hoodPosition;
+    addRequirements(m_hoodPosition);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    m_hoodPosition.HoodPositionUp();
+    boolean goingforward;
+    goingforward = true;
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
-  @Override
+  /*@Override
   public void execute() {
-    //Old Drive Train
-    /*double left = RobotContainer.xb.getY(Hand.kRight)+RobotContainer.xb.getX(Hand.kLeft);
-    double right = RobotContainer.xb.getY(Hand.kRight)-RobotContainer.xb.getX(Hand.kLeft);
-    */
-    //New Drive Train
-    double left = RobotContainer.xb.getY(Hand.kLeft)-RobotContainer.xb.getX(Hand.kRight);
-    double right = RobotContainer.xb.getY(Hand.kLeft)+RobotContainer.xb.getX(Hand.kRight);
-    m_driveTrain.Drive(left, right);
-   
-  }
+  SmartDashboard.putNumber("Counter", myCounter.get());
+  System.out.println(myCounter.get());
+  }*/
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    m_hoodPosition.HoodStop();
   }
 
   // Returns true when the command should end.

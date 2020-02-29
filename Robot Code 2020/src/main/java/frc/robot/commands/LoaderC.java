@@ -7,6 +7,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Loader;
 
@@ -14,11 +15,9 @@ public class LoaderC extends CommandBase {
   /**
    * Creates a new intakeFeed.
    */
+  DigitalInput IntakeLimSwitch = new DigitalInput(0);
   Loader m_loader;
-  public LoaderC (Loader loader) {
-
-    m_loader = loader;
-    
+  public LoaderC () {
         addRequirements(m_loader);
         // Use addRequirements() here to declare subsystem dependencies.
       }
@@ -27,12 +26,15 @@ public class LoaderC extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_loader.LoaderBeltActivator();
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    while(IntakeLimSwitch.get()){
+      m_loader.LoaderBeltActivator();
+    }
   }
 
   // Called once the command ends or is interrupted.

@@ -7,47 +7,41 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotContainer;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.LauncherFeed;
 
-public class ControlDrive extends CommandBase {
+public class LauncherDontFeed extends CommandBase {
   /**
-   * Creates a new ControlDrive.
+   * Creates a new CommandLift.
    */
-  DriveTrain m_driveTrain;
 
-  public ControlDrive(DriveTrain drive) {
+   LauncherFeed m_launcherFeed;
 
-m_driveTrain = drive;
+  public LauncherDontFeed(LauncherFeed launcherFeed) {
 
-    addRequirements(m_driveTrain);
+m_launcherFeed = launcherFeed;
 
+    addRequirements(m_launcherFeed);
+    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    m_launcherFeed.LoadDown();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //Old Drive Train
-    /*double left = RobotContainer.xb.getY(Hand.kRight)+RobotContainer.xb.getX(Hand.kLeft);
-    double right = RobotContainer.xb.getY(Hand.kRight)-RobotContainer.xb.getX(Hand.kLeft);
-    */
-    //New Drive Train
-    double left = RobotContainer.xb.getY(Hand.kLeft)-RobotContainer.xb.getX(Hand.kRight);
-    double right = RobotContainer.xb.getY(Hand.kLeft)+RobotContainer.xb.getX(Hand.kRight);
-    m_driveTrain.Drive(left, right);
-   
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+ 
+    m_launcherFeed.LoadStop();
+ 
   }
 
   // Returns true when the command should end.

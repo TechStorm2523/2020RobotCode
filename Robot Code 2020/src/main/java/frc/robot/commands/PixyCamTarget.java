@@ -4,50 +4,37 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
+//May be subject to change ALOT!
+/*package frc.robot.commands;
 
-package frc.robot.commands;
-
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotContainer;
-import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.PixyCam;
 
-public class ControlDrive extends CommandBase {
+public class PixyCamTarget extends CommandBase {
   /**
-   * Creates a new ControlDrive.
-   */
-  DriveTrain m_driveTrain;
-
-  public ControlDrive(DriveTrain drive) {
-
-m_driveTrain = drive;
-
-    addRequirements(m_driveTrain);
-
+   * Creates a new PixyCamOnt.
+   
+  PixyCam m_PixyCam;
+  public PixyCamTarget(PixyCam PixyCam) {
+    m_PixyCam = PixyCam;
+    addRequirements(m_PixyCam);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    m_PixyCam.turnOn();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //Old Drive Train
-    /*double left = RobotContainer.xb.getY(Hand.kRight)+RobotContainer.xb.getX(Hand.kLeft);
-    double right = RobotContainer.xb.getY(Hand.kRight)-RobotContainer.xb.getX(Hand.kLeft);
-    */
-    //New Drive Train
-    double left = RobotContainer.xb.getY(Hand.kLeft)-RobotContainer.xb.getX(Hand.kRight);
-    double right = RobotContainer.xb.getY(Hand.kLeft)+RobotContainer.xb.getX(Hand.kRight);
-    m_driveTrain.Drive(left, right);
-   
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    m_PixyCam.turnOn();
   }
 
   // Returns true when the command should end.
@@ -56,3 +43,4 @@ m_driveTrain = drive;
     return false;
   }
 }
+*/

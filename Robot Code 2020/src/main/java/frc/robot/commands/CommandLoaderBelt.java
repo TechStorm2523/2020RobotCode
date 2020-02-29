@@ -28,7 +28,7 @@ m_loader = LoaderSub;
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_loader.loader();
+    m_loader.LoaderBeltActivator();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -40,7 +40,7 @@ m_loader = LoaderSub;
   @Override
   public void end(boolean interrupted) {
  
-    m_loader.loader();
+    m_loader.LoaderBeltStop();
  
   }
 

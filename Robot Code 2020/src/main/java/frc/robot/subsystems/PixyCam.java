@@ -5,15 +5,48 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystems;
+/*package frc.robot.subsystems;
+
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
-public class TalonFXTest extends SubsystemBase {
-  /**
-   * Creates a new TalonFXTest.
-   */
-  public TalonFXTest() {
+
+
+public class PixyCam extends SubsystemBase {
+  
+  int x;
+  int y;
+  
+   public PixyCam() {
+
+  }
+  public void getTarget(int imgx, int imgy){
+    x = imgx;
+    y = imgy;
+  }
+  //Constructor 
+  public int xOfTarget(Image img){
+    
+    return x;
+
+  }
+  
+  public int yOfTarget(Image img){
+    int y;
+    return y;
+  }
+
+  public boolean isLeft(){
+    if (x < 0){
+      return true;
+    }
+    return false;
+  }
+  
+  public void turnOff(){
+    
 
   }
 
@@ -22,3 +55,4 @@ public class TalonFXTest extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 }
+*/

@@ -32,6 +32,9 @@ public class TurretMovement extends SubsystemBase {
     // MMM
 
   } 
+  public void TurretSpin(double speed){
+    TurretMovement.set(speed);
+  }
   public void TurretStop(){
     TurretMovement.set(0);
   }

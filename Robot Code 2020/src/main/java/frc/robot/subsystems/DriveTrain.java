@@ -7,6 +7,8 @@
 
 package frc.robot.subsystems;
 
+import javax.xml.namespace.QName;
+
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -35,9 +37,20 @@ SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight)
     super(
         // The PIDController used by the subsystem
         new PIDController(0, 0, 0));
+
+  }
+  public void driveSetup(){
+    
   }
   public void methodname(){
 
+  }
+  public String motorRPMS(){
+    
+    String output = "FR: "+FrontRight.getSelectedSensorVelocity()+" FL: "+FrontLeft.getSelectedSensorVelocity()
+                   
+    +" BR: "+BackRight.getSelectedSensorVelocity()+" BL: "+BackLeft.getSelectedSensorVelocity();
+    return output;
   }
   
   public void Drive(double Left, double Right){

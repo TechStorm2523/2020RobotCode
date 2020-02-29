@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.Constants;
+import frc.robot.commands.LoaderC;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Loader extends SubsystemBase {
@@ -21,10 +22,12 @@ public class Loader extends SubsystemBase {
   public Loader() {
 
   }
-
-public void loader(){
-
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    setDefaultCommand(new LoaderC());
 }
+
+
 
 public void LoaderBeltActivator(){
 

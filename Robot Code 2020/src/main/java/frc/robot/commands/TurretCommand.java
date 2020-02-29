@@ -7,23 +7,22 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.TurretMovement;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotContainer;
-import frc.robot.subsystems.DriveTrain;
 
-public class ControlDrive extends CommandBase {
+public class TurretCommand extends CommandBase {
   /**
-   * Creates a new ControlDrive.
+   * Creates a new TurretLeft.
    */
-  DriveTrain m_driveTrain;
 
-  public ControlDrive(DriveTrain drive) {
-
-m_driveTrain = drive;
-
-    addRequirements(m_driveTrain);
-
+  TurretMovement m_turretMovement;
+  public TurretCommand(TurretMovement turretMovement) {
+    // Use addRequirements() here to declare subsystem dependencies.
+    m_turretMovement = turretMovement;
+    addRequirements(m_turretMovement);
   }
 
   // Called when the command is initially scheduled.
@@ -34,20 +33,15 @@ m_driveTrain = drive;
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //Old Drive Train
-    /*double left = RobotContainer.xb.getY(Hand.kRight)+RobotContainer.xb.getX(Hand.kLeft);
-    double right = RobotContainer.xb.getY(Hand.kRight)-RobotContainer.xb.getX(Hand.kLeft);
-    */
-    //New Drive Train
-    double left = RobotContainer.xb.getY(Hand.kLeft)-RobotContainer.xb.getX(Hand.kRight);
-    double right = RobotContainer.xb.getY(Hand.kLeft)+RobotContainer.xb.getX(Hand.kRight);
-    m_driveTrain.Drive(left, right);
-   
+      //m_turretMovement.TurretSpin(RobotContainer.userStick.getTwist());
+      SmartDashboard.putNumber("Twist: ", RobotContainer.userStick.getTwist()); 
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    m_turretMovement.TurretStop();
   }
 
   // Returns true when the command should end.

@@ -7,6 +7,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.HoodPosition;
 public class CommandHoodDown extends CommandBase {
@@ -14,6 +15,7 @@ public class CommandHoodDown extends CommandBase {
      * Creates a new CommandHood.
      */
     HoodPosition m_hoodPosition;
+    DigitalInput HoodLimSwitch = new DigitalInput(2);
 
     public CommandHoodDown(HoodPosition hoodPosition) {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -24,7 +26,12 @@ public class CommandHoodDown extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_hoodPosition.HoodPositionDown();
+    while(!HoodLimSwitch.get()){
+    m_hoodPosition.HoodPositionDown(); 
+    }
+    
+    boolean goingforward;
+    goingforward = false;
   }
 
   // Called every time the scheduler runs while the command is scheduled.

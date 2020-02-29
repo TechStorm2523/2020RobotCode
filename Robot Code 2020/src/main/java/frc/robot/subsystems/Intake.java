@@ -16,7 +16,7 @@ public class Intake extends SubsystemBase {
   /**
    * Creates a new Intake.
    */
-WPI_TalonSRX intakeBelt = new WPI_TalonSRX(Constants.m_intake) ;
+WPI_TalonSRX intakeBelt = new WPI_TalonSRX(Constants.m_intake);
    public Intake() {
 
   }
