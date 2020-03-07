@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Pneumatics;
 
 public class CommandLiftUp extends CommandBase {
   /**
@@ -16,24 +17,28 @@ public class CommandLiftUp extends CommandBase {
    */
 
    Lift m_lift;
+   Pneumatics m_pneumatics;
 
-  public CommandLiftUp(Lift lift) {
-
+  public CommandLiftUp(Lift lift, Pneumatics pneumatics) {
+m_pneumatics = pneumatics;
 m_lift = lift;
 
-    addRequirements(m_lift);
+    addRequirements(m_lift, m_pneumatics);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_lift.LiftUp();
+    m_pneumatics.lockOut();
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+
+    m_lift.LiftUp();
   }
 
   // Called once the command ends or is interrupted.

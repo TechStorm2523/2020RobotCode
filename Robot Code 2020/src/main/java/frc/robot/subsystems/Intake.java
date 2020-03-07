@@ -22,7 +22,7 @@ WPI_TalonSRX intakeBelt = new WPI_TalonSRX(Constants.m_intake);
   }
 
   public void moveIntakeBelt(){
-  intakeBelt.set(1);
+  intakeBelt.set(.5);
 
   }
 public void stopIntakeBelt(){

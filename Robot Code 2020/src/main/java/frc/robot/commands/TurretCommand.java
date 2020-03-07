@@ -33,8 +33,11 @@ public class TurretCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      //m_turretMovement.TurretSpin(RobotContainer.userStick.getTwist());
-      SmartDashboard.putNumber("Twist: ", RobotContainer.userStick.getTwist()); 
+     double output = RobotContainer.userStick.getTwist();
+     output = -output * Math.abs(output);
+    
+      m_turretMovement.TurretSpin(output);
+      
 
   }
 

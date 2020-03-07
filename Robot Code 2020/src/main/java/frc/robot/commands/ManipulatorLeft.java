@@ -7,17 +7,21 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Manipulator;
+import frc.robot.subsystems.ColorSensor;
 
 public class ManipulatorLeft extends CommandBase {
   /**
    * Creates a new ManipulatorLeft.
    */
   Manipulator m_manipulator;
-  public ManipulatorLeft(Manipulator manipulator) {
+  ColorSensor m_color;
+  public ManipulatorLeft(Manipulator manipulator, ColorSensor colorSensor) {
     m_manipulator = manipulator;
-    addRequirements(m_manipulator);
+    m_color = colorSensor;
+    addRequirements(m_manipulator, m_color);
 
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -26,14 +30,16 @@ public class ManipulatorLeft extends CommandBase {
   @Override
   public void initialize() {
 
-    m_manipulator.SpinCounterClockwise();
-
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    if (m_color.colorRotations >= 3.0 || m_color.colorRotations <= 5.0){
+      m_manipulator.SpinCounterClockwise();
+    }
   }
+  
 
   // Called once the command ends or is interrupted.
   @Override

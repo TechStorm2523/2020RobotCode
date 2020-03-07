@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.util.Color;
+import frc.robot.commands.ColorC;
 
 import com.revrobotics.ColorSensorV3;
 import com.revrobotics.ColorMatchResult;
@@ -38,7 +39,10 @@ public class ColorSensor extends SubsystemBase {
 */
   public Color detectedColor = m_colorSensor.getColor();
 
+  public double colorRotations = 0;
+
    public ColorSensor() {
+     setDefaultCommand(new ColorC(this));
   }
 
   public boolean isBlue(){
@@ -68,6 +72,7 @@ public class ColorSensor extends SubsystemBase {
     }
     return false;
   }
+
 
 
 /*

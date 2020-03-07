@@ -24,7 +24,7 @@ public static int m_turret = 13;//should be Done
 public static int m_hood = 14;
 public static int m_launcher = 5;//Done
 public static int m_manipulator = 16;
-public static int m_lift = 6;//Done
+public static int m_lift = 6; //Done
 public static int m_launcherFeed = 11;//Done
 public static int m_PixyCam; //not done
 

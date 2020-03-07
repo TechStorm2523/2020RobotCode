@@ -9,7 +9,9 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.Launcher;
 
 public class SpinFlyWheel extends CommandBase {
@@ -28,12 +30,14 @@ public class SpinFlyWheel extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_Launcher.spinLauncherWheel();
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    
+    m_Launcher.spinLauncherWheel((1-RobotContainer.userStick.getThrottle())/2);
   }
 
   // Called once the command ends or is interrupted.

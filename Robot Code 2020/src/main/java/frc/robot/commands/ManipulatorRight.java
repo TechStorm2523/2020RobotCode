@@ -9,26 +9,33 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Manipulator;
+import frc.robot.subsystems.ColorSensor;
 
 public class ManipulatorRight extends CommandBase {
   /**
    * Creates a new ManipulatorRight.
    */
   Manipulator m_manipulator;
-  public ManipulatorRight(Manipulator manipulator) {
+  ColorSensor m_color;
+  public ManipulatorRight(Manipulator manipulator, ColorSensor color) {
     m_manipulator = manipulator;
-    addRequirements(m_manipulator);
+    m_color = color;
+    addRequirements(m_manipulator, m_color);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_manipulator.SpinClockwise();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    if (m_color.colorRotations >= 3.0 || m_color.colorRotations <= 5.0){
+      m_manipulator.SpinCounterClockwise();
+    }
+
+    
   }
 
   // Called once the command ends or is interrupted.

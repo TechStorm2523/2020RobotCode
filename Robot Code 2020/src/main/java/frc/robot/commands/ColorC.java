@@ -18,7 +18,9 @@ public class ColorC extends CommandBase {
   /**
    * Creates a new CommandHood.
    */
-
+  boolean red;
+  String lastColor = "noColor";
+  String thisColor;
   ColorSensor m_color;
   public ColorC(ColorSensor color) {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -29,13 +31,33 @@ public class ColorC extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-   
+    
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_color.detectedColor = m_color.getColor1();
+    m_color.detectedColor = m_color.getColor1(); 
+    /*
+    if (m_color.isBlue()){
+      thisColor = "blue";
+    } else if (m_color.isGreen()){
+      thisColor = "green";
+    } else if (m_color.isRed()){
+      thisColor = "red";
+    } else if (m_color.isYellow()){
+      thisColor = "yellow";
+    } else{
+      thisColor = "noColor";
+    }
+    
+    if (thisColor != lastColor){
+      m_color.colorRotations += .25;
+      lastColor = thisColor;
+    }
+    */
+
     //System.out.println(m_color.isColorMatch(ColorSensor.m_colorSensor.getColor()));
     /*
     SmartDashboard.putString("Color", String.valueOf(m_color.getSensedColor()));
@@ -43,10 +65,12 @@ public class ColorC extends CommandBase {
     SmartDashboard.putNumber("Blue Detected", m_color.detectedColor.blue);
     SmartDashboard.putNumber("Green Detected", m_color.detectedColor.green);
     */
+    
     SmartDashboard.putString("Red Detected", String.valueOf(m_color.isRed()));
     SmartDashboard.putString("Blue Detected", String.valueOf(m_color.isBlue()));
     SmartDashboard.putString("Green Detected", String.valueOf(m_color.isGreen()));
     SmartDashboard.putString("Yellow Detected", String.valueOf(m_color.isYellow()));
+    
 
   }
   // Called once the command ends or is interrupted.

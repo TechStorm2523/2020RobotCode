@@ -35,12 +35,20 @@ m_driveTrain = drive;
   @Override
   public void execute() {
     //Old Drive Train
-    /*double left = RobotContainer.xb.getY(Hand.kRight)+RobotContainer.xb.getX(Hand.kLeft);
-    double right = RobotContainer.xb.getY(Hand.kRight)-RobotContainer.xb.getX(Hand.kLeft);
-    */
-    //New Drive Train
-    double left = RobotContainer.xb.getY(Hand.kLeft)-RobotContainer.xb.getX(Hand.kRight);
-    double right = RobotContainer.xb.getY(Hand.kLeft)+RobotContainer.xb.getX(Hand.kRight);
+    double leftY = RobotContainer.xb.getX(Hand.kRight);
+    leftY = leftY*Math.abs(leftY);
+
+    double rightX = RobotContainer.xb.getY(Hand.kLeft);
+    rightX = -rightX *Math.abs(rightX);
+
+    double left;
+    double right;
+
+    right = -rightX+leftY;
+    left = rightX+leftY;
+
+    
+    
     m_driveTrain.Drive(left, right);
    
   }

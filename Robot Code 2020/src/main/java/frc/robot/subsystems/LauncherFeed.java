@@ -16,7 +16,7 @@ public class LauncherFeed extends SubsystemBase {
    * Creates a new LiftSub.
    */
 
-  WPI_TalonSRX LiftMotor = new WPI_TalonSRX(12);
+  WPI_TalonSRX LiftMotor = new WPI_TalonSRX(11);
 
   
 

@@ -11,23 +11,26 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.commands.SpinFlyWheel;
+//import edu.wpi.first.wpilibj2.Encoder;
 
 public class Launcher extends SubsystemBase {
   /*
    * Creates a new Launcher.
    */
+ // Encoder encoder = new Encoder(0,1);
   WPI_TalonSRX LauncherWheel = new WPI_TalonSRX(Constants.m_launcher);
 
   public Launcher() {
-
+    setDefaultCommand(new SpinFlyWheel(this));
   }
 
   public void SpinLauncherWheel(){
 
   }
 
-  public void spinLauncherWheel(){
-    LauncherWheel.set(1);
+  public void spinLauncherWheel(double speed){
+    LauncherWheel.set(speed);
 
   }
   public void dontspinLauncherWheel(){

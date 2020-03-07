@@ -18,32 +18,30 @@ public class Loader extends SubsystemBase {
    * Creates a new LiftSub.
    */
   DigitalInput IntakeLimSwitch = new DigitalInput(0);
-
-  WPI_TalonSRX BeltMotor = new WPI_TalonSRX(Constants.m_loader);
+  WPI_TalonSRX beltMotor = new WPI_TalonSRX(Constants.m_loader);
 
   public Loader() {
+    //setDefaultCommand(new LoaderC());
 
   }
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    setDefaultCommand(new LoaderC());
-}
+  
 
 
 
 public void LoaderBeltActivator(){
 
-  BeltMotor.set(1);
+  beltMotor.set(1);
 
 }
 
 public void LoaderBeltStop(){
 
-BeltMotor.set(0);
+beltMotor.set(0);
 }
 public boolean IntakeLimSwitch(){
   return IntakeLimSwitch.get();
 }
+
 
 
   @Override

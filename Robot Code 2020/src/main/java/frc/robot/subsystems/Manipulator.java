@@ -30,7 +30,10 @@ public class Manipulator extends SubsystemBase {
     
 
   }
-  public void Spin(final double  Speed){
+  public void stop(){
+    Manipulator.set(0);
+  }
+  public void Spin(final double Speed){
     Manipulator.set(Speed);
     
 

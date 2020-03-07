@@ -22,7 +22,7 @@ public class Lift extends SubsystemBase {
 
 public void LiftUp(){
 
-  LiftMotor.set(1);
+  LiftMotor.set(.5);
 
 }
 
@@ -33,7 +33,7 @@ LiftMotor.set(-1);
 }
 
 public void LiftStop(){
-
+  LiftMotor.set(-.5);
   LiftMotor.set(0);
   
 }

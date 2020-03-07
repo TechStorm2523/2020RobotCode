@@ -37,7 +37,7 @@ SpeedControllerGroup RightSide = new SpeedControllerGroup(FrontRight, BackRight)
     super(
         // The PIDController used by the subsystem
         new PIDController(0, 0, 0));
-
+    setDefaultCommand(new ControlDrive(this));
   }
   public void driveSetup(){
     

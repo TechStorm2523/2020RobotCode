@@ -4,44 +4,43 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Loader;
+import frc.robot.subsystems.Manipulator;
+import frc.robot.subsystems.Pneumatics;
 
-public class CommandLoaderBelt extends CommandBase {
+public class PneumaticsC extends CommandBase {
   /**
-   * Creates a new CommandLift.
+   * Creates a new ManipulatorLeft.
    */
+  
+  Pneumatics m_pneumatics;
+  public PneumaticsC(Pneumatics pneumatics) {
+    m_pneumatics = pneumatics;
+    addRequirements(m_pneumatics);
 
-   Loader m_loader;
-
-  public CommandLoaderBelt(Loader LoaderSub) {
-
-m_loader = LoaderSub;
-
-    addRequirements(m_loader);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_loader.LoaderBeltActivator();
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+
+    m_pneumatics.toggleFront();
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
- 
-    m_loader.LoaderBeltStop();
- 
+    
   }
 
   // Returns true when the command should end.
@@ -49,4 +48,7 @@ m_loader = LoaderSub;
   public boolean isFinished() {
     return false;
   }
+  
 }
+
+

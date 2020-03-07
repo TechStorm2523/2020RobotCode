@@ -26,8 +26,8 @@ public class CommandHoodDown extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    while(!m_hoodPosition.HoodLimSwitch()){
-    m_hoodPosition.HoodPositionDown(); 
+    if(!m_hoodPosition.HoodLimSwitch()){
+      m_hoodPosition.HoodPositionDown(); 
     }
     
     boolean goingforward;
@@ -48,6 +48,6 @@ public class CommandHoodDown extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return m_hoodPosition.HoodLimSwitch();
   }
 }
